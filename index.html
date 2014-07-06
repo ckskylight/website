@@ -50,31 +50,9 @@
         var menu_head = $('ul.side-menu h2.title').height();
         var item_height = $('ul.side-menu li a').height();
         var row_width = $('#nav-container').width();
-
-
-        $("div.navbar").hover(function(e) {
-            e.preventDefault();
-            if ($('ul.side-menu, body').hasClass('open')) {
-                console.log("close");
-                $('ul.side-menu').removeClass('open');
-                $('.underline').removeClass('open');
-                $('body').removeClass('open');
-
-                // Reset menu on close
-                $('ul.side-menu li').each(function() {
-                    var col_i = $(this).index(); // Horizontal Index
-                    //var fromTop = menu_head + (row_i * 125);
-                    var fromLeft = (0.15 * window.innerWidth) + (col_i * 125);
-                    var delayTime = Math.abs((3 - col_i) * 100);
-                    //console.log(delayTime);
-                    //$(this).css("top", 0);
-                    $(this).delay(delayTime).queue(function() {
-                        $(this).css("left", fromLeft);
-                        $(this).css("opacity", 0);
-                        $(this).dequeue();
-                    });
-                });
-            } else {
+        
+        function handlerIn() {
+            if (! $('.underline').hasClass('open')) {
                 console.log("open");
                 console.log("row width " + row_width);
                 $('ul.side-menu').addClass('open');
@@ -90,6 +68,7 @@
                         var delayTime = col_i * 150;
                         //console.log(delayTime);
                         //$(this).css("top", 0);
+                        $(this).dequeue();
                         $(this).delay(delayTime).queue(function() {
                             $(this).css("left", fromLeft);
                             $(this).css("opacity", 100);
@@ -98,8 +77,33 @@
                     }
                 });
             }
+        }
+        
+        function handlerOut() {
+            console.log("close");
+                        
+                $('ul.side-menu').removeClass('open');
+                $('.underline').removeClass('open');
+                $('body').removeClass('open');
 
-        });
+            // Reset menu on close
+            $('ul.side-menu li').each(function() {
+                var col_i = $(this).index(); // Horizontal Index
+                //var fromTop = menu_head + (row_i * 125);
+                var fromLeft = (0.15 * window.innerWidth) + (col_i * 125);
+                var delayTime = Math.abs((3 - col_i) * 100);
+                //console.log(delayTime);
+                //$(this).css("top", 0);
+                $(this).delay(delayTime).queue(function() {
+                    $(this).css("left", fromLeft);
+                    $(this).css("opacity", 0);
+                    $(this).dequeue();
+                });
+            });
+        }
+
+
+        $("div.navbar").hover(handlerIn, handlerOut);
     </script>
 
 
@@ -111,7 +115,7 @@
                 <image display="none" overflow="visible" opacity="0.17" width="897" height="596" xlink:href="../../../../../../Downloads/tumblr_mvcak80m1z1qkamj3o6_1280.jpg" transform="matrix(3.2107 0 0 3.0201 0 0)">
                 </image>
                 <rect x="1260" y="764.9" fill="none" width="636.1" height="492" />
-                <text transform="matrix(1 0 0 1 1259.9819 1052.9386)" display="none" font-family="'Lato-Hairline'" font-size="400">CK</text>
+                <text transform="matrix(1 0 0 1 1259.9819 1052.9386)" display="none" font-family="'Lato'" font-size="400">CK</text>
                 <g opacity="0.39">
                     <g>
                         <path fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M-4.2,1132.1
@@ -137,7 +141,7 @@
                     <g>
                         <rect x="702.4" y="1042.6" fill="none" width="597.2" height="327" />
 
-                        <text transform="matrix(1 0 0 1 702.4445 1330.5909)" fill="#52AFFD" font-family="'Lato-Hairline'" font-size="400" letter-spacing="-20">CK</text>
+                        <text transform="matrix(1 0 0 1 702.4445 1330.5909)" fill="#52AFFD" font-family="'Lato'" font-size="400" letter-spacing="-20">CK</text>
                     </g>
                 </g>
                 <g>
@@ -146,7 +150,7 @@
                     </image>
                     <g>
                         <rect x="1110.5" y="1369.6" fill="none" width="597.2" height="327" />
-                        <text transform="matrix(1 0 0 1 1110.4854 1448.8278)" font-family="'Lato-Hairline'" font-size="110" letter-spacing="-5">ONG</text>
+                        <text transform="matrix(1 0 0 1 1110.4854 1448.8278)" font-family="'Lato'" font-size="110" letter-spacing="-5">ONG</text>
                     </g>
                 </g>
                 <rect x="745.8" y="1517" fill="none" width="1827" height="102" />
