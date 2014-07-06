@@ -4,15 +4,108 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>CK Ong</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/navbar-mod.css" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/vendor/modernizr.js"></script>
 </head>
 
 <body>
+    
+    <div class="underline"></div>
+
+    <div class="navbar">
+        <ul class="side-menu">
+            <li class="metro">
+                <p class="navbutton">
+                    <a href="#">
+                        Interests
+                    </a>
+                </p>
+            </li>
+            <li class="metro">
+                <p class="navbutton">
+                    <a href="#">
+                        Experience
+                    </a>
+                </p>
+            </li>
+            <li class="metro">
+                <p class="navbutton">
+                    <a href="#">
+                        Skills
+                    </a>
+                </p>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <script>
+        var menu_head = $('ul.side-menu h2.title').height();
+        var item_height = $('ul.side-menu li a').height();
+        var row_width = $('#nav-container').width();
+
+
+        $("div.navbar").hover(function(e) {
+            e.preventDefault();
+            if ($('ul.side-menu, body').hasClass('open')) {
+                console.log("close");
+                $('ul.side-menu').removeClass('open');
+                $('.underline').removeClass('open');
+                $('body').removeClass('open');
+
+                // Reset menu on close
+                $('ul.side-menu li').each(function() {
+                    var col_i = $(this).index(); // Horizontal Index
+                    //var fromTop = menu_head + (row_i * 125);
+                    var fromLeft = (0.15 * window.innerWidth) + (col_i * 125);
+                    var delayTime = Math.abs((3 - col_i) * 100);
+                    //console.log(delayTime);
+                    //$(this).css("top", 0);
+                    $(this).delay(delayTime).queue(function() {
+                        $(this).css("left", fromLeft);
+                        $(this).css("opacity", 0);
+                        $(this).dequeue();
+                    });
+                });
+            } else {
+                console.log("open");
+                console.log("row width " + row_width);
+                $('ul.side-menu').addClass('open');
+                $('.underline').addClass('open');
+                $('body').addClass('open');
+
+                $('ul.side-menu li').each(function() {
+                    // Metro Effect
+                    if ($(this).hasClass('metro')) {
+                        var col_i = $(this).index(); // Horizontal Index
+                        //var fromTop = menu_head + (row_i * 125);
+                        var fromLeft = (0.80 * window.innerWidth) - (col_i * 125) - 125;
+                        var delayTime = col_i * 150;
+                        //console.log(delayTime);
+                        //$(this).css("top", 0);
+                        $(this).delay(delayTime).queue(function() {
+                            $(this).css("left", fromLeft);
+                            $(this).css("opacity", 100);
+                            $(this).dequeue();
+                        });
+                    }
+                });
+            }
+
+        });
+    </script>
+
+
 
     <div class="row">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2880 1800" enable-background="new 0 0 2880 1800" xml:space="preserve">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2880 1800" enable-background="new 0 0 2880 1800" xml:space="preserve" preserveAspectRatio="xMinYMin">
             <g id="Layer_1">
 
                 <image display="none" overflow="visible" opacity="0.17" width="897" height="596" xlink:href="../../../../../../Downloads/tumblr_mvcak80m1z1qkamj3o6_1280.jpg" transform="matrix(3.2107 0 0 3.0201 0 0)">
@@ -1487,6 +1580,16 @@
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script>
+        window.onload = function() {
+            console.log("ONLOAD");
+            $('ul.side-menu li').each(function() {
+                var col_i = $(this).index();
+                var fromLeft = (0.15 * window.innerWidth) + (col_i * 125);
+                $(this).css("left", fromLeft);
+            });
+        };
+    </script>
     <script>
         $(document).foundation();
     </script>

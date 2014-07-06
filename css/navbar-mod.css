@@ -1,0 +1,285 @@
+ html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+    position: relative;
+    top: 0;
+    -webkit-transition: top .3s;
+    transition: top .3s;
+}
+body.open {
+    top: 0px;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote: before, blockquote: after, q: before, q: after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* CSS RESET DONE */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    color: #fff;
+    margin: 0 auto;
+    font: 1em/1.3em Times, serif;
+    font-family: 'Montserrat', serif;
+    background-color: white;
+}
+.header {
+    margin-bottom: 40px;
+    position: relative;
+}
+.clearfix {
+    clear: both;
+}
+.container {
+    position: relative;
+    padding: 40px 10%;
+    text-align: center;
+    height: 100%;
+}
+p {
+    text-align: left;
+    font-size: 16px;
+    line-height: 40px;
+}
+h1 {
+    margin: 40px 0;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+div.underline {
+    position: fixed;
+    left: calc(80% - 375px);
+    width: 400px;
+    height: 60px;
+    border-bottom: 1px solid rgba(163, 163, 163, 0);
+    -webkit-transition: border-bottom 0.7s;
+    transition: border-bottom 0.7s;
+}
+
+div.underline.open {
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+ul.side-menu {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: -1;
+    border-bottom: 1px solid rgba(0,0,0,0);
+    -webkit-transition: top .3s;
+    transition: top .3s;
+}
+ul.side-menu.open {
+    top: 0;
+}
+
+
+ul.side-menu li {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    text-align: left;
+    opacity: 0;
+    -webkit-transition: top .3s;
+    transition: top .3s;
+    -webkit-transition: left .3s, opacity 0.15s;
+    transition: left .3s, opacity 0.15s;
+}
+
+
+ul.side-menu li.metro {
+    position: absolute;
+    padding: 0;
+    top: 0px;
+    height: inherit;
+    width: 125px;
+    text-align: center;
+}
+
+
+ul.side-menu li a {
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    line-height: inherit;
+}
+ul.side-menu li.metro a {
+    height: inherit;
+    width: inherit;
+    color: inherit;
+}
+
+p.navbutton {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 20%; /* using this to vertically center align*/
+    text-align: center;
+    color: black;
+    font-family: "Lato";
+    font-weight: 100;
+}
+
+div.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 125px;
+    width: 100%;
+}
+
+
+
+/* Colors */
+
+ul.side-menu li.metro.blue {
+    background-color: #5c84db;
+}
+ul.side-menu li.metro.light-blue {
+    background-color: #2FC2EF;
+}
+ul.side-menu li.metro.purple {
+    background-color: #a24fea;
+}
+ul.side-menu li.metro.red {
+    background-color: #e54747;
+}
+ul.side-menu li.metro.pink {
+    background-color: #ea4c89;
+}
+ul.side-menu li.metro.green {
+    background-color: #85e500;
+}
+ul.side-menu li.metro.orange {
+    background-color: #e28f00;
+}
+ul.side-menu li.metro.teal {
+    background-color: #00e2e2;
+}
