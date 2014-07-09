@@ -255,6 +255,15 @@ div.navbar {
     width: 100%;
 }
 
+div.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: -1;
+}
+
 
 
 /* Colors */
