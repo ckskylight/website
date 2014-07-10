@@ -107,27 +107,36 @@
         }
 
 
-        $("div.navbar").hover(handlerIn, handlerOut);
+        
 
 
-        function interestsHandlerIn() {
-            var background_frame = document.getElementById("background-frame");
-            background_frame.src = "img/Interests.png";
+        function interestsClickHandler() {
+            $("#background-interests-blur").fadeIn(1000);
+        }
+        
+        function interestsHoverInHandler() {
+            $("#background-interests").fadeIn(500);
+        }
+        
+        function interestsHoverOutHandler() {
+            $("#background-interests").fadeOut(500);
         }
 
-        function interestsHandlerOut() {
-            var background_frame = document.getElementById("background-frame");
-            background_frame.src = "img/Home.png";
-        }
-
-        $("#interests").hover(interestsHandlerIn, interestsHandlerOut);
+        $("#interests").click(interestsClickHandler);
+        
+        $("#interests").hover(interestsHoverInHandler, interestsHoverOutHandler);
+        
     </script>
 
-    <div class="background" id="background-container" >
-        <img src="img/Interests.png" id="background-frame" />
+    <div class="background-home" id="background-home" >
+        <img src="img/Home-opaque.png" />
     </div>
     
-    <div class="background">
+    <div class="background" id="background-interests" >
+        <img src="img/Interests-opaque.png" />
+    </div>
+    
+    <div class="blur" id="background-interests-blur">
         <img src="img/Interests-blur.png">
     </div>
 
@@ -135,8 +144,15 @@
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
-    <script src="js/blur.dev.js"></script>
     <script>
+        
+        function preload(arrayOfImages) {
+            console.log("preloading");
+            $(arrayOfImages).each(function(){
+                $('<img/>')[0].src = this;
+            });
+        }
+        
         window.onload = function() {
             console.log("ONLOAD");
             $('ul.side-menu li').each(function() {
@@ -145,11 +161,15 @@
                 $(this).css("left", fromLeft);
             });
 
-            $("div.navbar").blurjs({
-                source: "#background-container",
-                overlay: 'rgba(255,255,255,0.3)',
-                radius: 7
-            });
+            preload([
+                'img/Home.png',
+                'img/Interests.png',
+                'img/Interests-blur.png'
+            ]);
+            
+        window.setTimeout( function() {
+            $("div.navbar").hover(handlerIn, handlerOut);
+        }, 2000);
 
         };
     </script>

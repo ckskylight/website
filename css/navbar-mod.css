@@ -206,8 +206,6 @@ ul.side-menu li {
     padding: 0 20px;
     text-align: left;
     opacity: 0;
-    -webkit-transition: top .3s;
-    transition: top .3s;
     -webkit-transition: left .3s, opacity 0.15s;
     transition: left .3s, opacity 0.15s;
 }
@@ -238,7 +236,7 @@ ul.side-menu li.metro a {
 
 p.navbutton {
     position: absolute;
-    height: inherit;
+    height: 40px;
     width: inherit;
     top: 20%; /* using this to vertically center align*/
     text-align: center;
@@ -253,6 +251,7 @@ div.navbar {
     left: 0;
     height: 125px;
     width: 100%;
+    z-index: 10;
 }
 
 div.background {
@@ -261,7 +260,37 @@ div.background {
     left: 0;
     margin-left: 10%;
     margin-right: 10%;
+    z-index: -2;
+    display: none;
+}
+
+div.background-home {
+    z-index: -3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+div.background.active {
+    z-index: -2;
+    display: none;
+}
+
+div.blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 10%;
+    margin-right: 10%;
     z-index: -1;
+    display: none;
+}
+
+div.blur.active {
+    z-index: -1;
+    display: none;
 }
 
 
