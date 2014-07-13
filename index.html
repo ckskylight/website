@@ -116,6 +116,7 @@
                 $("#background-interests").fadeOut(500);
             }
             else {
+                $("#background-interests").fadeIn(500);
                 $("#background-interests-blur").fadeIn(700).addClass("active");
             }
             
@@ -253,8 +254,7 @@
             console.log(homeImageHeight);
             $(".scrollbox").css("height", homeImageHeight - 82);
             
-            // SET DISPLAY TO NONE FOR ALL THE BACKGROUNDS
-            $("#background-interests").css("display", "none");
+
         };
     </script>
     <script>

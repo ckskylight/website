@@ -278,6 +278,12 @@ div.background-home {
 div.background.active {
 }
 
+
+#background-interests {
+    display: none;
+}
+
+
 div.blur {
     position: fixed;
     top: 0;
@@ -288,8 +294,6 @@ div.blur {
     z-index: 0;
     display: none;
 }
-
-
 
 
 .scrollbox::-webkit-scrollbar {
@@ -329,7 +333,6 @@ div.blur {
 	/* Opera doesn't support this in the shorthand */
 	background-attachment: local, local, scroll, scroll;
 }
-
 
 
 
