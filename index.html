@@ -28,14 +28,14 @@
                 </p>
             </li>
             <li class="metro">
-                <p class="navbutton">
+                <p class="navbutton" id="experience">
                     <a href="#">
                         Experience
                     </a>
                 </p>
             </li>
             <li class="metro">
-                <p class="navbutton">
+                <p class="navbutton" id="skills">
                     <a href="#">
                         Skills
                     </a>
@@ -108,7 +108,8 @@
 
 
         
-
+        
+        // INTERESTS HANDLERS
 
         function interestsClickHandler() {
             if ( $("#background-interests-blur").hasClass("active") ) {
@@ -118,9 +119,7 @@
             else {
                 $("#background-interests").fadeIn(500);
                 $("#background-interests-blur").fadeIn(700).addClass("active");
-            }
-            
-            
+            } 
         }
         
         function interestsHoverInHandler() {
@@ -138,6 +137,65 @@
         
         $("#interests").hover(interestsHoverInHandler, interestsHoverOutHandler);
         
+        
+        // EXPERIENCE HANDLERS
+
+        function experienceClickHandler() {
+            if ( $("#background-experience-blur").hasClass("active") ) {
+                $("#background-experience-blur").fadeOut(700).removeClass("active");
+                $("#background-experience").fadeOut(500);
+            }
+            else {
+                $("#background-experience").fadeIn(500);
+                $("#background-experience-blur").fadeIn(700).addClass("active");
+            } 
+        }
+        
+        function experienceHoverInHandler() {
+            $("#background-experience").fadeIn(500);
+        }
+        
+        function experienceHoverOutHandler() {
+            if (! $("#background-experience-blur").hasClass("active") ) {
+                $("#background-experience").fadeOut(500);
+            }
+            
+        }
+
+        $("#experience").click(experienceClickHandler);
+        
+        $("#experience").hover(experienceHoverInHandler, experienceHoverOutHandler);
+        
+        
+        
+        // SKILLS HANDLERS
+
+        function skillsClickHandler() {
+            if ( $("#background-skills-blur").hasClass("active") ) {
+                $("#background-skills-blur").fadeOut(700).removeClass("active");
+                $("#background-skills").fadeOut(500);
+            }
+            else {
+                $("#background-skills").fadeIn(500);
+                $("#background-skills-blur").fadeIn(700).addClass("active");
+            } 
+        }
+        
+        function skillsHoverInHandler() {
+            $("#background-skills").fadeIn(500);
+        }
+        
+        function skillsHoverOutHandler() {
+            if (! $("#background-skills-blur").hasClass("active") ) {
+                $("#background-skills").fadeOut(500);
+            }
+            
+        }
+
+        $("#skills").click(skillsClickHandler);
+        
+        $("#skills").hover(skillsHoverInHandler, skillsHoverOutHandler);
+        
     </script>
 
     <div class="background-home" id="background-home" >
@@ -145,7 +203,7 @@
     </div>
     
     <div class="background" id="background-interests" >
-        <img src="img/Interests-opaque-small.jpg" id="interests-image" />
+        <img src="img/Interests-opaque-menu-room-clean.png" id="interests-image" />
     </div>
     
     <div class="blur" id="background-interests-blur">
@@ -198,7 +256,125 @@
             <h2>Astro-everything</h2>
             
         </div>
-        <img src="img/Interests-blur.png" id="interests-image">
+        <img src="img/Interests-blur-clean.png" id="interests-image">
+    </div>
+    
+    
+    
+    <div class="background" id="background-experience" >
+        <img src="img/Interests-opaque-small.jpg" id="experience-image" />
+    </div>
+    
+    <div class="blur" id="background-experience-blur">
+        <div class="scrollbox">
+            <h1>Experience</h1>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            
+        </div>
+        <img src="img/Interests-blur.png" id="experience-image">
+    </div>
+    
+    
+    
+    <div class="background" id="background-skills" >
+        <img src="img/Interests-opaque-small.jpg" id="skills-image" />
+    </div>
+    
+    <div class="blur" id="background-skills-blur">
+        <div class="scrollbox">
+            <h1>Skills</h1>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            <h2>Photography</h2>
+            <h2>Acapella</h2>
+            <h2>Environmental Issues</h2>
+            <h2>Entrepreneurship</h2>
+            <h2>Astro-everything</h2>
+            
+        </div>
+        <img src="img/Interests-blur.png" id="skills-image">
     </div>
 
     
@@ -216,11 +392,6 @@
             });
         }
         
-        $("#interests-image").on("load", function() {
-            console.log("LOADED");
-            console.log(this.height);
-        });
-
         
         window.onload = function() {
             console.log("ONLOAD");

@@ -283,6 +283,14 @@ div.background.active {
     display: none;
 }
 
+#background-experience {
+    display: none;
+}
+
+#background-skills {
+    display: none;
+}
+
 
 div.blur {
     position: fixed;
@@ -306,9 +314,9 @@ div.blur {
 	width: 200px;
     position: absolute;
     margin-top: 80px;
-    margin-left: 38%;
+    margin-left: 27%;
     margin-right: 1.5%;
-    width: 60.5%;
+    width: 71.5%;
     z-index: 2;
 
 	background:
