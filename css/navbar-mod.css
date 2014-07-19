@@ -241,9 +241,9 @@ p.navbutton {
     width: inherit;
     top: 20%; /* using this to vertically center align*/
     text-align: center;
-    color: black;
-    font-family: "Lato";
-    font-weight: 100;
+    color: rgb(130,130,130);
+    font-family: "Fredericka the Great";
+    font-weight: 300;
 }
 
 div.navbar {
