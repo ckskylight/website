@@ -160,9 +160,10 @@ p {
 }
 h1 {
     margin: 40px 0;
-    font-size: 40px;
+    font-size: 25px;
     line-height: 40px;
     font-weight: bold;
+    font-family: "Fredericka the Great";
 }
 a {
     text-decoration: none;
@@ -259,10 +260,25 @@ div.background {
     position: fixed;
     top: 0;
     left: 0;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
     z-index: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
+div.background.interests {
+    background-image: url(../img/Interests-opaque-menu-room-clean.png);
+}
+
+div.background.resume {
+    background-image: url(../img/Resume.png);
+}
+
+div.background.projects {
+    background-image: url(../img/Projects.png);
 }
 
 div.background-home {
@@ -270,9 +286,18 @@ div.background-home {
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-image: url(../img/Home-green.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    
+}
+
+img.background-image{
+    height:inherit;
 }
 
 div.background.active {
@@ -283,11 +308,23 @@ div.background.active {
     display: none;
 }
 
-#background-experience {
+#background-projects {
     display: none;
 }
 
-#background-skills {
+#background-resume {
+    display: none;
+}
+
+#background-interests-blur {
+    display: none;
+}
+
+#background-projects-blur {
+    display: none;
+}
+
+#background-resume-blur {
     display: none;
 }
 
@@ -296,11 +333,23 @@ div.blur {
     position: fixed;
     top: 0;
     left: 0;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    z-index: 0;
-    display: none;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
+div.blur.interests {
+    background-image: url(../img/Interests-blur-full.png);
+}
+
+div.blur.projects {
+    background-image: url(../img/Projects-blur-full.png);
+}
+
+div.blur.resume {
+    background-image: url(../img/Resume-blur-full.png);
 }
 
 
@@ -318,8 +367,10 @@ div.blur {
     margin-right: 1.5%;
     width: 71.5%;
     z-index: 2;
+}
 
-	background:
+.scrollbox.shadow {
+    background:
 		/* Shadow covers */
 		linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0)),
 		linear-gradient(rgba(255,255,255,0), white 90%) 0 100%,
@@ -341,6 +392,7 @@ div.blur {
 	/* Opera doesn't support this in the shorthand */
 	background-attachment: local, local, scroll, scroll;
 }
+
 
 
 

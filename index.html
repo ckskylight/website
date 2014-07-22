@@ -27,16 +27,16 @@
                 </p>
             </li>
             <li class="metro">
-                <p class="navbutton" id="experience">
+                <p class="navbutton" id="projects">
                     <a href="#">
-                        Experience
+                        Projects
                     </a>
                 </p>
             </li>
             <li class="metro">
-                <p class="navbutton" id="skills">
+                <p class="navbutton" id="resume">
                     <a href="#">
-                        Skills
+                        Resume
                     </a>
                 </p>
             </li>
@@ -137,75 +137,73 @@
         $("#interests").hover(interestsHoverInHandler, interestsHoverOutHandler);
         
         
-        // EXPERIENCE HANDLERS
+        // projects HANDLERS
 
-        function experienceClickHandler() {
-            if ( $("#background-experience-blur").hasClass("active") ) {
-                $("#background-experience-blur").fadeOut(700).removeClass("active");
-                $("#background-experience").fadeOut(500);
+        function projectsClickHandler() {
+            if ( $("#background-projects-blur").hasClass("active") ) {
+                $("#background-projects-blur").fadeOut(700).removeClass("active");
+                $("#background-projects").fadeOut(500);
             }
             else {
-                $("#background-experience").fadeIn(500);
-                $("#background-experience-blur").fadeIn(700).addClass("active");
+                $("#background-projects").fadeIn(500);
+                $("#background-projects-blur").fadeIn(700).addClass("active");
             } 
         }
         
-        function experienceHoverInHandler() {
-            $("#background-experience").fadeIn(500);
+        function projectsHoverInHandler() {
+            $("#background-projects").fadeIn(500);
         }
         
-        function experienceHoverOutHandler() {
-            if (! $("#background-experience-blur").hasClass("active") ) {
-                $("#background-experience").fadeOut(500);
+        function projectsHoverOutHandler() {
+            if (! $("#background-projects-blur").hasClass("active") ) {
+                $("#background-projects").fadeOut(500);
             }
             
         }
 
-        $("#experience").click(experienceClickHandler);
+        $("#projects").click(projectsClickHandler);
         
-        $("#experience").hover(experienceHoverInHandler, experienceHoverOutHandler);
+        $("#projects").hover(projectsHoverInHandler, projectsHoverOutHandler);
         
         
         
-        // SKILLS HANDLERS
+        // resume HANDLERS
 
-        function skillsClickHandler() {
-            if ( $("#background-skills-blur").hasClass("active") ) {
-                $("#background-skills-blur").fadeOut(700).removeClass("active");
-                $("#background-skills").fadeOut(500);
+        function resumeClickHandler() {
+            if ( $("#background-resume-blur").hasClass("active") ) {
+                $("#background-resume-blur").fadeOut(700).removeClass("active");
+                $("#background-resume").fadeOut(500);
             }
             else {
-                $("#background-skills").fadeIn(500);
-                $("#background-skills-blur").fadeIn(700).addClass("active");
+                $("#background-resume").fadeIn(500);
+                $("#background-resume-blur").fadeIn(700).addClass("active");
             } 
         }
         
-        function skillsHoverInHandler() {
-            $("#background-skills").fadeIn(500);
+        function resumeHoverInHandler() {
+            $("#background-resume").fadeIn(500);
         }
         
-        function skillsHoverOutHandler() {
-            if (! $("#background-skills-blur").hasClass("active") ) {
-                $("#background-skills").fadeOut(500);
+        function resumeHoverOutHandler() {
+            if (! $("#background-resume-blur").hasClass("active") ) {
+                $("#background-resume").fadeOut(500);
             }
             
         }
 
-        $("#skills").click(skillsClickHandler);
+        $("#resume").click(resumeClickHandler);
         
-        $("#skills").hover(skillsHoverInHandler, skillsHoverOutHandler);
+        $("#resume").hover(resumeHoverInHandler, resumeHoverOutHandler);
         
     </script>
 
     <div class="background-home" id="background-home" >
-        <img src="img/Home-green.png" id="home-image" />
     </div>
     
-    <div class="background" id="background-interests" >
-        <img src="img/Interests-opaque-menu-room-clean.png" id="interests-image" />
+    <div class="background interests" id="background-interests" >
     </div>
     
-    <div class="blur" id="background-interests-blur">
+    <div class="blur interests" id="background-interests-blur">
         <div class="scrollbox">
             <h1>Interests</h1>
             <h2>Photography</h2>
@@ -255,18 +253,16 @@
             <h2>Astro-everything</h2>
             
         </div>
-        <img src="img/Interests-blur-clean.png" id="interests-image">
     </div>
     
     
     
-    <div class="background" id="background-experience" >
-        <img src="img/Experience.png" id="experience-image" />
+    <div class="background projects" id="background-projects" >
     </div>
     
-    <div class="blur" id="background-experience-blur">
+    <div class="blur projects" id="background-projects-blur">
         <div class="scrollbox">
-            <h1>Experience</h1>
+            <h1>Projects</h1>
             <h2>Photography</h2>
             <h2>Acapella</h2>
             <h2>Environmental Issues</h2>
@@ -314,66 +310,46 @@
             <h2>Astro-everything</h2>
             
         </div>
-        <img src="img/Experience-blur.png" id="experience-image">
     </div>
     
     
     
-    <div class="background" id="background-skills" >
-        <img src="img/Skills.png" id="skills-image" />
+    <div class="background resume" id="background-resume" >
     </div>
     
-    <div class="blur" id="background-skills-blur">
+    <div class="blur resume" id="background-resume-blur">
         <div class="scrollbox">
-            <h1>Skills</h1>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
+            <div class="row">
+                <h1>Graphic Design</h1>
+                <p>Photoshop, Illustrator</p>
+            </div>
+            <div class="row">
+                <h1>Web Development</h1>
+                <p>HTML, JavaScript, CSS, PHP, Foundation, Bootstrap, D3</p>
+            </div>
+            <div class="row">
+                <h1>3D Design / CAD</h1>
+                <p>Maya, Inventor</p>
+            </div>
+            <div class="row">
+                <h1>Coding</h1>
+                <p>Java, Python, C++, OpenCV</p>
+            </div>
+            <div class="row">
+                <h1>Electronics</h1>
+                <p>Circuits, Arduino, Assembly</p>
+            </div>
+            <div class="row">
+                <h1>Mobile and wearable technology</h1>
+                <p>Android, Tizen Wearable, Android Wear, projects working with multiple wearable devices</p>
+            </div>
+            <div class="row">
+                <h1>Arts</h1>
+                <p>Drawing, Photography, Videography, Music Composition/Arrangement, Singing</p>
+            </div>
+
             
         </div>
-        <img src="img/Skills-blur.png" id="skills-image">
     </div>
 
     
