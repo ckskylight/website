@@ -69,15 +69,30 @@ function closeAllModals() {
     $(".tab-content").each(function () {
         $(this).fadeOut(500);
     });
+    $(".background").each(function () {
+        $(this).fadeOut(500);
+    });
 }
 
 
+function areThereActiveModals() {
+    var activeModal;
+    $(".blur").each( function() {
+        if ($(this).hasClass("active")) {
+            activeModal = true;
+        }
+    });
+    
+    return activeModal;
+}
 
 
  // INTERESTS HANDLERS
 
 function interestsClickHandler() {
-    //closeAllModals();
+    if (areThereActiveModals() && !$(".blur.interests").hasClass("active")) {
+        closeAllModals();
+    }
     if ($(".blur.interests").hasClass("active")) {
         $(".blur.interests").fadeOut(500).removeClass("active");
         // $("#background-interests").fadeOut(500);
@@ -108,7 +123,9 @@ $("#interests").hover(interestsHoverInHandler, interestsHoverOutHandler);
  // PROJECTS HANDLERS
 
 function projectsClickHandler() {
-    //closeAllModals();
+    if (areThereActiveModals() && !$(".blur.projects").hasClass("active")) {
+        closeAllModals();
+    }
     if ($(".blur.projects").hasClass("active")) {
         $(".blur.projects").fadeOut(500).removeClass("active");
         // $("#background-projects").fadeOut(500);
@@ -140,7 +157,9 @@ $("#projects").hover(projectsHoverInHandler, projectsHoverOutHandler);
  // RESUME HANDLERS
 
 function resumeClickHandler() {
-    //closeAllModals();
+    if (areThereActiveModals() && !$(".blur.resume").hasClass("active")) {
+        closeAllModals();
+    }
     if ($(".blur.resume").hasClass("active")) {
         $(".blur.resume").fadeOut(500).removeClass("active");
         // $("#background-resume").fadeOut(500);
