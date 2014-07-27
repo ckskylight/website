@@ -20,7 +20,7 @@
 
 /* Text styling */
 .cbp-so-section h2 {
-	font-size: 5em;
+	font-size: 3em;
 	font-weight: 300;
 	line-height: 1;
     font-family: "Fredericka the Great";
@@ -28,16 +28,32 @@
 }
 
 .cbp-so-section h4 {
-	font-size: 1.5em;
+	font-size: 1.8em;
 	font-weight: 300;
     font-family: "Quicksand";
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.2em;
+    padding-bottom: 0.2em;
+    text-shadow: 0px 2px 30px rgba(0,0,0,0.5);
+}
+
+.cbp-so-section h5 {
+	font-weight: 300;
     color: #333333;
-    line-height: 1.2em
+    font-size: 1em;
+    line-height: 1.1em;
+    padding-bottom: 0.5em;
+    font-family: "Quicksand";
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
 }
 
 .cbp-so-section p {
-	font-size: 2em;
 	font-weight: 300;
+    color: #333333;
+    font-size: 1em;
+    line-height: 1.1em;
 }
 
 /* Sides */
