@@ -7,10 +7,11 @@
     <title>CK Ong</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/navbar-mod.css" />
+    <link rel="stylesheet" href="css/component.css" />
     <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Quicksand' rel='stylesheet' type='text/css'>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/modernizr.custom.js"></script>
 </head>
 
 <body>
@@ -45,342 +46,257 @@
     </div>
 
 
-    <script>
-        var menu_head = $('ul.side-menu h2.title').height();
-        var item_height = $('ul.side-menu li a').height();
-        var row_width = $('#nav-container').width();
+    <script src="js/handlers.js"></script>
 
-        var timeoutHandle;
-
-        function handlerIn() {
-            if (!$('.underline').hasClass('open')) {
-                console.log("open");
-                console.log("row width " + row_width);
-                $('ul.side-menu').addClass('open');
-                $('.underline').addClass('open');
-                $('body').addClass('open');
-
-                $('ul.side-menu li').each(function() {
-                    // Metro Effect
-                    if ($(this).hasClass('metro')) {
-                        var col_i = $(this).index(); // Horizontal Index
-                        var fromLeft = (0.80 * window.innerWidth) - (col_i * 125) - 125;
-                        var delayTime = col_i * 150;
-                        //console.log(delayTime);
-                        //$(this).css("top", 0);
-                        $(this).dequeue();
-                        $(this).delay(delayTime).queue(function() {
-                            $(this).css("left", fromLeft);
-                            $(this).css("opacity", 100);
-                            $(this).dequeue();
-                        });
-                    }
-                });
-            }
-
-            window.clearTimeout(timeoutHandle);
-
-            timeoutHandle = window.setTimeout(function() {
-                console.log("actual close");
-                $('ul.side-menu').removeClass('open');
-                $('.underline').removeClass('open');
-                $('body').removeClass('open');
-
-                // Reset menu on close
-                $('ul.side-menu li').each(function() {
-                    var col_i = $(this).index(); // Horizontal Index
-                    //var fromTop = menu_head + (row_i * 125);
-                    var fromLeft = (0.15 * window.innerWidth) + (col_i * 125);
-                    var delayTime = Math.abs((3 - col_i) * 100);
-                    $(this).delay(delayTime).queue(function() {
-                        $(this).css("left", fromLeft);
-                        $(this).css("opacity", 0);
-                        $(this).dequeue();
-                    });
-                });
-            }, 10000);
-        }
-
-        function handlerOut() {
-            console.log("close");
-        }
-
-
-        
-        
-        // INTERESTS HANDLERS
-
-        function interestsClickHandler() {
-            if ( $("#background-interests-blur").hasClass("active") ) {
-                $("#background-interests-blur").fadeOut(700).removeClass("active");
-                $("#background-interests").fadeOut(500);
-            }
-            else {
-                $("#background-interests").fadeIn(500);
-                $("#background-interests-blur").fadeIn(700).addClass("active");
-            } 
-        }
-        
-        function interestsHoverInHandler() {
-            $("#background-interests").fadeIn(500);
-        }
-        
-        function interestsHoverOutHandler() {
-            if (! $("#background-interests-blur").hasClass("active") ) {
-                $("#background-interests").fadeOut(500);
-            }
-            
-        }
-
-        $("#interests").click(interestsClickHandler);
-        
-        $("#interests").hover(interestsHoverInHandler, interestsHoverOutHandler);
-        
-        
-        // projects HANDLERS
-
-        function projectsClickHandler() {
-            if ( $("#background-projects-blur").hasClass("active") ) {
-                $("#background-projects-blur").fadeOut(700).removeClass("active");
-                $("#background-projects").fadeOut(500);
-            }
-            else {
-                $("#background-projects").fadeIn(500);
-                $("#background-projects-blur").fadeIn(700).addClass("active");
-            } 
-        }
-        
-        function projectsHoverInHandler() {
-            $("#background-projects").fadeIn(500);
-        }
-        
-        function projectsHoverOutHandler() {
-            if (! $("#background-projects-blur").hasClass("active") ) {
-                $("#background-projects").fadeOut(500);
-            }
-            
-        }
-
-        $("#projects").click(projectsClickHandler);
-        
-        $("#projects").hover(projectsHoverInHandler, projectsHoverOutHandler);
-        
-        
-        
-        // resume HANDLERS
-
-        function resumeClickHandler() {
-            if ( $("#background-resume-blur").hasClass("active") ) {
-                $("#background-resume-blur").fadeOut(700).removeClass("active");
-                $("#background-resume").fadeOut(500);
-            }
-            else {
-                $("#background-resume").fadeIn(500);
-                $("#background-resume-blur").fadeIn(700).addClass("active");
-            } 
-        }
-        
-        function resumeHoverInHandler() {
-            $("#background-resume").fadeIn(500);
-        }
-        
-        function resumeHoverOutHandler() {
-            if (! $("#background-resume-blur").hasClass("active") ) {
-                $("#background-resume").fadeOut(500);
-            }
-            
-        }
-
-        $("#resume").click(resumeClickHandler);
-        
-        $("#resume").hover(resumeHoverInHandler, resumeHoverOutHandler);
-        
-    </script>
-
-    <div class="background-home" id="background-home" >
+    <div class="background-home" id="background-home">
     </div>
-    
-    <div class="background interests" id="background-interests" >
+
+    <div class="background interests" id="background-interests">
     </div>
-    
+
     <div class="blur interests" id="background-interests-blur">
-        <div class="scrollbox">
-            <h1>Interests</h1>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            
+    </div>
+
+    <div class="tab-content interests" id="interest-scrollbox">
+        <div id="cbp-so-scroller-interests" class="cbp-so-scroller">
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Lemon drops</h2>
+                    <p>Fruitcake toffee jujubes. Topping biscuit sesame snaps jelly caramels jujubes tiramisu fruitcake. Marzipan tart lemon drops chocolate sesame snaps jelly beans.</p>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/1.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/2.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Plum caramels</h2>
+                    <p>Lollipop powder danish sugar plum caramels liquorice sweet cookie. Gummi bears caramels gummi bears candy canes cheesecake sweet roll icing dragée. Gummies jelly-o tart. Cheesecake unerdwear.com candy canes apple pie halvah chocolate tiramisu.</p>
+                </article>
+            </section>
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Marzipan gingerbread</h2>
+                    <p>Soufflé bonbon jelly cotton candy liquorice dessert jelly bear claw candy canes. Pudding halvah bonbon marzipan powder. Marzipan gingerbread sweet jelly.</p>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/3.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/4.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Carrot cake</h2>
+                    <p>Sesame snaps sweet wafer danish. Chupa chups carrot cake icing donut halvah bonbon. Chocolate cake candy marshmallow pudding dessert marzipan jujubes sugar plum.</p>
+                </article>
+            </section>
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Pudding lollipop</h2>
+                    <p>Chupa chups pudding lollipop gummi bears gummies cupcake pie. Cookie cotton candy caramels. Oat cake dessert applicake. Sweet roll tiramisu sweet roll sweet roll.</p>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/5.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/6.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Soufflé bonbon</h2>
+                    <p>Cake cotton candy lollipop. Cake croissant cheesecake candy sugar plum icing apple pie wafer. Pie sugar plum tiramisu tiramisu pie fruitcake candy icing. Candy icing gummies gummies cheesecake brownie lemon drops chocolate gingerbread.</p>
+                </article>
+            </section>
+        </div>
+
+    </div>
+
+
+
+    <div class="background projects" id="background-projects">
+    </div>
+    
+    <div class="blur projects" id="background-projects-blur"></div>
+
+    <div class="tab-content projects" id="projects-scrollbox">
+        <div id="cbp-so-scroller-projects" class="cbp-so-scroller">
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Lemon drops</h2>
+                    <p>Fruitcake toffee jujubes. Topping biscuit sesame snaps jelly caramels jujubes tiramisu fruitcake. Marzipan tart lemon drops chocolate sesame snaps jelly beans.</p>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/1.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/2.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Plum caramels</h2>
+                    <p>Lollipop powder danish sugar plum caramels liquorice sweet cookie. Gummi bears caramels gummi bears candy canes cheesecake sweet roll icing dragée. Gummies jelly-o tart. Cheesecake unerdwear.com candy canes apple pie halvah chocolate tiramisu.</p>
+                </article>
+            </section>
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Marzipan gingerbread</h2>
+                    <p>Soufflé bonbon jelly cotton candy liquorice dessert jelly bear claw candy canes. Pudding halvah bonbon marzipan powder. Marzipan gingerbread sweet jelly.</p>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/3.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/4.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Carrot cake</h2>
+                    <p>Sesame snaps sweet wafer danish. Chupa chups carrot cake icing donut halvah bonbon. Chocolate cake candy marshmallow pudding dessert marzipan jujubes sugar plum.</p>
+                </article>
+            </section>
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Pudding lollipop</h2>
+                    <p>Chupa chups pudding lollipop gummi bears gummies cupcake pie. Cookie cotton candy caramels. Oat cake dessert applicake. Sweet roll tiramisu sweet roll sweet roll.</p>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/5.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/6.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Soufflé bonbon</h2>
+                    <p>Cake cotton candy lollipop. Cake croissant cheesecake candy sugar plum icing apple pie wafer. Pie sugar plum tiramisu tiramisu pie fruitcake candy icing. Candy icing gummies gummies cheesecake brownie lemon drops chocolate gingerbread.</p>
+                </article>
+            </section>
         </div>
     </div>
-    
-    
-    
-    <div class="background projects" id="background-projects" >
+
+
+
+    <div class="background resume" id="background-resume">
     </div>
-    
-    <div class="blur projects" id="background-projects-blur">
-        <div class="scrollbox">
-            <h1>Projects</h1>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            <h2>Photography</h2>
-            <h2>Acapella</h2>
-            <h2>Environmental Issues</h2>
-            <h2>Entrepreneurship</h2>
-            <h2>Astro-everything</h2>
-            
-        </div>
-    </div>
-    
-    
-    
-    <div class="background resume" id="background-resume" >
-    </div>
-    
+
     <div class="blur resume" id="background-resume-blur">
-        <div class="scrollbox">
-            <div class="row">
-                <h1>Graphic Design</h1>
-                <p>Photoshop, Illustrator</p>
-            </div>
-            <div class="row">
-                <h1>Web Development</h1>
-                <p>HTML, JavaScript, CSS, PHP, Foundation, Bootstrap, D3</p>
-            </div>
-            <div class="row">
-                <h1>3D Design / CAD</h1>
-                <p>Maya, Inventor</p>
-            </div>
-            <div class="row">
-                <h1>Coding</h1>
-                <p>Java, Python, C++, OpenCV</p>
-            </div>
-            <div class="row">
-                <h1>Electronics</h1>
-                <p>Circuits, Arduino, Assembly</p>
-            </div>
-            <div class="row">
-                <h1>Mobile and wearable technology</h1>
-                <p>Android, Tizen Wearable, Android Wear, projects working with multiple wearable devices</p>
-            </div>
-            <div class="row">
-                <h1>Arts</h1>
-                <p>Drawing, Photography, Videography, Music Composition/Arrangement, Singing</p>
-            </div>
-
-            
-        </div>
     </div>
 
-    
-    
+    <div class="tab-content resume" id="resume-scrollbox">
+        <div id="cbp-so-scroller-resume" class="cbp-so-scroller">
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Coding</h2>
+                    <h4>Java, Python, C++, OpenCV</h4>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/1.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/2.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Mobile and wearable technology</h2>
+                    <h4>Android, Tizen Wearable, Android Wear, projects working with multiple wearable devices</h4>
+                </article>
+            </section>
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Web Development</h2>
+                    <h4>HTML, JavaScript, CSS, PHP, Foundation, Bootstrap, D3</h4>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/4.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="img/resume/Photoshop.png" class="cbp-icon" alt="img01">
+                    <img src="img/resume/Illustrator.png" class="cbp-icon" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>Graphic Design</h2>
+                    <h4>Photoshop, Illustrator</h4>
+                </article>
+            </section>
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Electronics</h2>
+                    <h4>Circuits, Arduino, Assembly</h4>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/5.png" alt="img01">
+                </figure>
+            </section>
+            <section class="cbp-so-section">
+                <figure class="cbp-so-side cbp-so-side-left">
+                    <img src="images/6.png" alt="img01">
+                </figure>
+                <article class="cbp-so-side cbp-so-side-right">
+                    <h2>3D Design / CAD</h2>
+                    <h4>Maya, Inventor</h4>
+                </article>
+            </section>
+            <section class="cbp-so-section">
+                <article class="cbp-so-side cbp-so-side-left">
+                    <h2>Arts</h2>
+                    <h4>Drawing, Photography, Videography, Music Composition/Arrangement, Singing</h4>
+                </article>
+                <figure class="cbp-so-side cbp-so-side-right">
+                    <img src="images/5.png" alt="img01">
+                </figure>
+            </section>
+        </div>
+
+    </div>
+
+
+
+
 
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpScroller.js"></script>
     <script>
-        
+        new cbpScroller(document.getElementById('cbp-so-scroller-resume'));
+        new cbpScroller(document.getElementById('cbp-so-scroller-interests'));
+        new cbpScroller(document.getElementById('cbp-so-scroller-projects'));
+    </script>
+    <script>
         function preload(arrayOfImages) {
             console.log("preloading");
-            $(arrayOfImages).each(function(){
+            $(arrayOfImages).each(function() {
                 $('<img/>')[0].src = this;
             });
         }
-        
-        
+
+
         window.onload = function() {
             console.log("ONLOAD");
-            
+
             // POSITION THE MENU ITEMS
             $('ul.side-menu li').each(function() {
                 var col_i = $(this).index();
                 var fromLeft = (0.15 * window.innerWidth) + (col_i * 125);
                 $(this).css("left", fromLeft);
             });
-            
-            
+
+
             // PRELOAD ALL THE IMAGES
-            
+
             /*
             preload([
                 'img/Home.png',
@@ -388,18 +304,13 @@
                 'img/Interests-blur.png'
             ]);
             */
-            
-            
+
+
             // WAT A SECOND BEFORE MENU IS ACTIVATED
-            window.setTimeout( function() {
+            window.setTimeout(function() {
                 $("div.navbar").hover(handlerIn, handlerOut);
             }, 1000);
-            
-            // SET THE HEIGHTS OF ELEMENTS
-            var homeImageHeight = $("#home-image").height();
-            console.log(homeImageHeight);
-            $(".scrollbox").css("height", homeImageHeight - 82);
-            
+
 
         };
     </script>
