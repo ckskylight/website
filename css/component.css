@@ -30,7 +30,7 @@
 .cbp-so-section h4 {
 	font-size: 1.8em;
 	font-weight: 300;
-    font-family: "Quicksand";
+    font-family: "Open Sans";
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.2em;
     padding-bottom: 0.2em;
@@ -42,8 +42,8 @@
     color: #333333;
     font-size: 1em;
     line-height: 1.1em;
-    padding-bottom: 0.5em;
-    font-family: "Quicksand";
+    padding-bottom: 0.6em;
+    font-family: "Open Sans";
     border-bottom-color: black;
     border-bottom-style: solid;
     border-bottom-width: 1px;
@@ -54,7 +54,17 @@
     color: #333333;
     font-size: 1em;
     line-height: 1.1em;
+    font-family: "Open Sans";
 }
+
+.cbp-so-section span.bold {
+	font-weight: 600;
+}
+
+.cbp-so-section span.underline {
+	text-decoration: underline;
+}
+
 
 /* Sides */
 .cbp-so-side {
