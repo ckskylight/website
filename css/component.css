@@ -44,12 +44,17 @@
     line-height: 1.1em;
     padding-bottom: 0.6em;
     font-family: "Open Sans";
-    border-bottom-color: black;
+    border-bottom-color: rgba(0,0,0,0.3);
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
 
+.cbp-so-section h5.bold {
+	font-weight: 600;
+}
+
 .cbp-so-section p {
+    text-align: inherit;
 	font-weight: 300;
     color: #333333;
     font-size: 1em;
