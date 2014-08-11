@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/navbar-mod.css" />
     <link rel="stylesheet" href="css/component.css" />
-    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <!-- Important Owl stylesheet -->
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+
+    <!-- Default Theme -->
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
     <link href='http://fonts.googleapis.com/css?family=Fredericka+the+Great|Quicksand' rel='stylesheet' type='text/css'>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>
+
 </head>
 
 <body>
@@ -46,8 +49,6 @@
         </ul>
     </div>
 
-
-    <script src="js/handlers.js"></script>
 
     <div class="background-home" id="background-home">
     </div>
@@ -388,16 +389,18 @@
                     <img src="img/resume/inventor.png" class="cbp-icon" alt="img01">
                     <img src="img/resume/vue.jpg" class="cbp-icon" alt="img01">
                     <br>
-                    <div class="renders">
-                        <div>
-                            <div class="image"><img src="img/resume/renders/Floating%20Island9%20(sig).jpg"></div>
+                    <div id="renders" class="owl-carousel owl-theme">
+
+                        <div class="image">
+                            <img src="img/resume/renders/Floating%20Island9%20(sig).jpg" alt="The Last of us">
                         </div>
-                        <div>
-                            <div class="image"><img src="img/resume/renders/Bright%20forest8.jpg" ></div>
+                        <div class="image">
+                            <img src="img/resume/renders/Bright%20forest8.jpg" alt="GTA V">
                         </div>
-                        <div>
-                            <div class="image"><img src="img/resume/renders/Earthrise%202.0%206.jpg"></div>
+                        <div class="image">
+                            <img src="img/resume/renders/Earthrise%202.0%206.jpg" alt="Mirror Edge">
                         </div>
+
                     </div>
                 </figure>
                 <article class="cbp-so-side cbp-so-side-right">
@@ -472,13 +475,15 @@
 
 
 
-
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="owl-carousel/owl.carousel.js"></script>
+    <script src="js/modernizr.custom.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpScroller.js"></script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="js/handlers.js"></script>
+
+
     <script>
         new cbpScroller(document.getElementById('cbp-so-scroller-resume'));
         new cbpScroller(document.getElementById('cbp-so-scroller-interests'));
@@ -486,20 +491,26 @@
     </script>
 
     <script>
-        
-        $(document).ready(function(){
-            // Using the fade effect
-            console.log("doing slick stuff");
-            $('.renders').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                slide: '> div',
-                cssEase: 'linear'
+        $(document).ready(function() {
+
+            $("#renders").owlCarousel({
+
+                navigation: true, // Show next and prev buttons
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true
+
+                // "singleItem:true" is a shortcut for:
+                // items : 1, 
+                // itemsDesktop : false,
+                // itemsDesktopSmall : false,
+                // itemsTablet: false,
+                // itemsMobile : false
+
             });
+
         });
-        
+
         function preload(arrayOfImages) {
             console.log("preloading");
             $(arrayOfImages).each(function() {

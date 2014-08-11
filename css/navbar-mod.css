@@ -372,3 +372,12 @@ li.slideshowimage {
     height: 45vh;
 }
 
+div.image {
+}
+
+div.image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
