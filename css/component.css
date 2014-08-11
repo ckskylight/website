@@ -7,6 +7,10 @@
 	margin-bottom: 15em;
 }
 
+.cbp-so-section.full {
+	margin-bottom: 0em;
+}
+
 /* Clear floats of children */
 .cbp-so-section:before,
 .cbp-so-section:after {
@@ -85,6 +89,12 @@
 	transition: transform 0.5s, opacity 0.5s;
 }
 
+.cbp-so-side.full {
+    width: 100%;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
 /* Clear floats of children */
 .cbp-so-side:before,
 .cbp-so-side:after {
@@ -108,6 +118,8 @@
 	text-align: right;
 }
 
+
+
 .cbp-so-side-right img { /*applies to img elements inside a cbp-so-side-right element*/
 	float: left;
 }
@@ -115,6 +127,7 @@
 .cbp-so-side-left img {
 	float: right;
 }
+
 
 .cbp-icon {
     width: auto;

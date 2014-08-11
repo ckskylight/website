@@ -367,3 +367,8 @@ body:after{
     content: url(../img/Home-green.png) url(../img/interests-opaque-menu-room-clean.png) url(../img/Projects.png) url(../img/Resume.png);
 }
 
+li.slideshowimage {
+    width: 100%;
+    height: 45vh;
+}
+
