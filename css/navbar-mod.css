@@ -343,8 +343,8 @@ div.blur.projects {
 }
 
 div.blur.resume {
-    /*background-image: url(../img/Resume-blur-full.png);*/
-    background-color: rgb(70,70,70);
+    background-image: url(../img/Resume-blur-full.png);
+    /*background-color: rgb(70,70,70);*/
 }
 
 
