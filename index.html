@@ -380,28 +380,67 @@
                     <p>8.022: Physics II (Advanced)</p>
                 </article>
                 <figure class="cbp-so-side cbp-so-side-right">
+                    <iframe src="http://player.vimeo.com/video/103203496" width="500" height="282" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </figure>
+            </section>
+            <section class="cbp-so-section full">
+                <figure class="cbp-so-side cbp-so-side-left full full">
+                    <div id="renders" class="owl-carousel owl-theme">
 
+                        <div class="image full">
+                            <img src="img/resume/renders/Floating%20Island9%20(sig).jpg">
+                        </div>
+                        <div class="image full">
+                            <img src="img/resume/renders/Bright%20forest8.jpg">
+                        </div>
+                        <div class="image full">
+                            <img src="img/resume/renders/Earthrise%202.0%206.jpg">
+                        </div>
+
+                    </div>
                 </figure>
             </section>
             <section class="cbp-so-section">
                 <figure class="cbp-so-side cbp-so-side-left">
-                    <img src="img/resume/maya.jpg" class="cbp-icon" alt="img01">
-                    <img src="img/resume/inventor.png" class="cbp-icon" alt="img01">
-                    <img src="img/resume/vue.jpg" class="cbp-icon" alt="img01">
-                    <br>
-                    <div id="renders" class="owl-carousel owl-theme">
+                    <div id="kubrarenders" class="owl-carousel owl-theme">
 
                         <div class="image">
-                            <img src="img/resume/renders/Floating%20Island9%20(sig).jpg" alt="The Last of us">
+                            <img src="img/resume/kubrarenders/1.jpg">
                         </div>
                         <div class="image">
-                            <img src="img/resume/renders/Bright%20forest8.jpg" alt="GTA V">
+                            <img src="img/resume/kubrarenders/2.jpg">
                         </div>
                         <div class="image">
-                            <img src="img/resume/renders/Earthrise%202.0%206.jpg" alt="Mirror Edge">
+                            <img src="img/resume/kubrarenders/3.jpg">
                         </div>
-
+                        <div class="image">
+                            <img src="img/resume/kubrarenders/4.jpg">
+                        </div>
+                        <div class="image">
+                            <img src="img/resume/kubrarenders/5.jpg">
+                        </div>
+                        <div class="image">
+                            <img src="img/resume/kubrarenders/6.jpg">
+                        </div>
                     </div>
+                    <br>
+                    <div id="reverb" class="owl-carousel owl-theme">
+
+                        <div class="image">
+                            <img src="img/resume/reverb/citystage.jpg">
+                        </div>
+                        <div class="image">
+                            <img src="img/resume/reverb/turnstile.jpg">
+                        </div>
+                        <div class="image">
+                            <img src="img/resume/reverb/victoryplatform.jpg">
+                        </div>
+                        <div class="image">
+                            <img src="img/resume/reverb/cakestage.jpg">
+                        </div>
+                    </div>
+
+
                 </figure>
                 <article class="cbp-so-side cbp-so-side-right">
                     <h2>3D Design / CAD</h2>
@@ -495,17 +534,30 @@
 
             $("#renders").owlCarousel({
 
-                navigation: true, // Show next and prev buttons
+                autoPlay: 20000,
                 slideSpeed: 300,
                 paginationSpeed: 400,
                 singleItem: true
 
-                // "singleItem:true" is a shortcut for:
-                // items : 1, 
-                // itemsDesktop : false,
-                // itemsDesktopSmall : false,
-                // itemsTablet: false,
-                // itemsMobile : false
+            });
+
+            $("#kubrarenders").owlCarousel({
+
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: 7000,
+                pagination: false
+
+            });
+
+            $("#reverb").owlCarousel({
+
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                singleItem: true,
+                autoPlay: 7000,
+                pagination: false
 
             });
 
