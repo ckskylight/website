@@ -25,6 +25,8 @@
 /* Text styling */
 .cbp-so-section h2 {
 	font-size: 3em;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 0px 2px 30px rgba(0,0,0,0.5);
 	font-weight: 300;
 	line-height: 1;
     font-family: "Fredericka the Great";
@@ -35,20 +37,20 @@
 	font-size: 1.8em;
 	font-weight: 300;
     font-family: "Open Sans";
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.3);
     line-height: 1.2em;
-    padding-bottom: 0.2em;
+    padding-bottom: 0.9em;
     text-shadow: 0px 2px 30px rgba(0,0,0,0.5);
 }
 
 .cbp-so-section h5 {
 	font-weight: 300;
-    color: #333333;
+    color: rgba(255,255,255,0.8);
     font-size: 1em;
     line-height: 1.1em;
     padding-bottom: 0.6em;
     font-family: "Open Sans";
-    border-bottom-color: rgba(0,0,0,0.3);
+    border-bottom-color: rgba(255,255,255,0.3);
     border-bottom-style: solid;
     border-bottom-width: 1px;
 }
@@ -60,10 +62,11 @@
 .cbp-so-section p {
     text-align: inherit;
 	font-weight: 300;
-    color: #333333;
+    color: rgba(255,255,255,0.5);
     font-size: 1em;
-    line-height: 1.1em;
+    line-height: 1.2em;
     font-family: "Open Sans";
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
 
 .cbp-so-section span.bold {

@@ -161,7 +161,7 @@ p {
     text-align: left;
     font-size: 16px;
     line-height: 40px;
-    font-family: "Quicksand";
+    font-family: "Helvetica";
 }
 h1 {
     margin: 40px 0;
@@ -173,7 +173,6 @@ h1 {
 a {
     text-decoration: none;
     color: #fff;
-    margin: 0 10px;
 }
 
 div.underline {
@@ -270,7 +269,7 @@ div.background {
     height: 100%;
     width: 100%;
     text-align: center;
-    background-size: cover;
+    /*background-size: cover;*/
     background-repeat: no-repeat;
     background-position: 50% 0%;
 }
@@ -319,7 +318,7 @@ Initialize all modals as display: none
 .blur.interests,
 .blur.projects,
 .blur.resume {
-    display: none;
+    /*display: none;*/
 }
 
 
@@ -329,7 +328,7 @@ div.blur {
     left: 0;
     height: 100%;
     width: 100%;
-    background-size: cover;
+    /*background-size: cover;*/
     background-repeat: no-repeat;
     background-position: 50% 0%;
 }
@@ -343,13 +342,13 @@ div.blur.projects {
 }
 
 div.blur.resume {
-    background-image: url(../img/Resume-blur-full.png);
+    background-image: url(../img/wood.jpg);
     /*background-color: rgb(70,70,70);*/
 }
 
 
 div.tab-content {
-    display: none;
+    /*display: none;*/
     position: relative;
     width: 100%;
     height: auto;

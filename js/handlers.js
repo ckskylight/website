@@ -117,7 +117,7 @@ function interestsHoverOutHandler() {
 
 $("#interests").click(interestsClickHandler);
 
-$("#interests").hover(interestsHoverInHandler, interestsHoverOutHandler);
+//$("#interests").hover(interestsHoverInHandler, interestsHoverOutHandler);
 
 
  // PROJECTS HANDLERS
@@ -150,7 +150,7 @@ function projectsHoverOutHandler() {
 
 $("#projects").click(projectsClickHandler);
 
-$("#projects").hover(projectsHoverInHandler, projectsHoverOutHandler);
+//$("#projects").hover(projectsHoverInHandler, projectsHoverOutHandler);
 
 
 
@@ -184,7 +184,7 @@ function resumeHoverOutHandler() {
 
 $("#resume").click(resumeClickHandler);
 
-$("#resume").hover(resumeHoverInHandler, resumeHoverOutHandler);
+//$("#resume").hover(resumeHoverInHandler, resumeHoverOutHandler);
 
 
 
