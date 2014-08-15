@@ -362,10 +362,6 @@ div.tab-content {
     margin-top: 80px;
 }
 
-body:after{
-    display: none;
-    content: url(../img/Home-green.png) url(../img/Interests-opaque-menu-room-clean.png) url(../img/Projects.png) url(../img/Resume.png);
-}
 
 li.slideshowimage {
     width: 100%;
