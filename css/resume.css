@@ -1,0 +1,34 @@
+
+
+.row.gray {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: calc((100% - 62rem)/2);
+    padding-right: calc((100% - 62rem)/2);
+    max-width: none;
+    background-color: rgb(64,64,64);
+}
+
+.row.white {
+}
+
+
+.row.gray p,
+.row.gray h1,
+.row.gray h3,
+.row.gray h5 {
+    color: white !important;
+}
+
+.row.gray h4 {
+    color: rgba(255,255,255,0.75);
+}
+
+.row.gray h2 {
+    color: rgb(174, 202, 82) !important;
+}
+
+
+.row.white h4 {
+    color: rgba(174,202,82,0.75);
+}
