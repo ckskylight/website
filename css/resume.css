@@ -1,15 +1,32 @@
-
+body {
+    background-image: url("../img/resume/resume-background.jpg");
+    background-attachment:fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 .row.gray {
+    /*
     margin-left: 0;
     margin-right: 0;
     padding-left: calc((100% - 62rem)/2);
     padding-right: calc((100% - 62rem)/2);
-    max-width: none;
-    background-color: rgb(64,64,64);
+    max-width: none;*/
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: rgba(64,64,64,0.9);
 }
 
 .row.white {
+    /*
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: calc((100% - 62rem)/2);
+    padding-right: calc((100% - 62rem)/2);
+    max-width: none;*/
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: rgba(255,255,255,0.8);
 }
 
 
@@ -32,3 +49,12 @@
 .row.white h4 {
     color: rgba(174,202,82,0.75);
 }
+
+.row.pad-top {
+    padding-top: 5em;
+}
+
+.row.pad-bottom {
+    padding-bottom: 5em;
+}
+
